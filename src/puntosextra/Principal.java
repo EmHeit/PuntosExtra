@@ -18,20 +18,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         
-        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode("Periodos Academicos");
-        arbol = new DefaultTreeModel(nodo);
-        jt_periodos = new JTree(arbol);
-        
-        DefaultMutableTreeNode Q1 = new DefaultMutableTreeNode("Q1");
-        DefaultMutableTreeNode Q2 = new DefaultMutableTreeNode("Q2");
-        DefaultMutableTreeNode Q4 = new DefaultMutableTreeNode("Q4");
-        DefaultMutableTreeNode Q5 = new DefaultMutableTreeNode("Q5");
-        
-        nodo.add(Q1);
-        nodo.add(Q2);
-        nodo.add(Q4);
-        nodo.add(Q5);
-        
+      
     }
 
     /**
@@ -58,7 +45,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_periodos = new javax.swing.JTree();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        pb_carga = new javax.swing.JProgressBar();
         jLabel2 = new javax.swing.JLabel();
         txt_equipo2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -143,7 +130,7 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jt_periodos);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 420, 300));
-        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 680, 20));
+        jPanel1.add(pb_carga, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 680, 20));
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Puntos");
@@ -221,31 +208,39 @@ public class Principal extends javax.swing.JFrame {
         String equipo2 = txt_equipo2.getText();
         String puntos = ftxf_puntos1.getText();
         String puntos1 = ftxf_puntos2.getText();
+
+
+        DefaultTreeModel m = (DefaultTreeModel) jt_periodos.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode nodo_algo;
+        nodo_algo = new DefaultMutableTreeNode ();
+        arbol = new DefaultTreeModel(raiz);
+        jt_periodos = new JTree(arbol);
         
-        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) arbol.getRoot();
-        DefaultMutableTreeNode r =  new DefaultMutableTreeNode(torneo);
-        DefaultMutableTreeNode r1 =  new DefaultMutableTreeNode(periodo);
-        DefaultMutableTreeNode r2 =  new DefaultMutableTreeNode(deporte);
-        DefaultMutableTreeNode r3 =  new DefaultMutableTreeNode(equipo1);
-        DefaultMutableTreeNode r4 =  new DefaultMutableTreeNode(equipo2);
-        DefaultMutableTreeNode r5 =  new DefaultMutableTreeNode(puntos);
-        DefaultMutableTreeNode r6 =  new DefaultMutableTreeNode(puntos1);
+        DefaultMutableTreeNode torneos;
+        torneos = new DefaultMutableTreeNode(torneo);
+        DefaultMutableTreeNode periodos;
+        periodos = new DefaultMutableTreeNode(periodo);
+        DefaultMutableTreeNode deportes;
+        deportes = new DefaultMutableTreeNode(deporte);
+        DefaultMutableTreeNode equipos1;
+        equipos1 = new DefaultMutableTreeNode(equipo1);        
+        DefaultMutableTreeNode equipos2;
+        equipos2 = new DefaultMutableTreeNode(equipo2);        
+        DefaultMutableTreeNode punto1;
+        punto1 = new DefaultMutableTreeNode(puntos);        
+        DefaultMutableTreeNode punto2;
+        punto2 = new DefaultMutableTreeNode(puntos1);        
+       
         
-        raiz.add(r);
-        raiz.add(r1);
-        raiz.add(r2);
-        raiz.add(r3);
-        raiz.add(r4);
-        raiz.add(r5);
-        raiz.add(r6);
+        raiz.add(torneos);
+        raiz.add(periodos);
+        raiz.add(deportes);
+        raiz.add(equipos1);
+        raiz.add(equipos2);
+        raiz.add(punto1);
+        raiz.add(punto2);
         
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r)});
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r1)});
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r2)});
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r3)});
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r4)});
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r5)});
-        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r6)});
 
     }//GEN-LAST:event_b_guardarEquiposMouseClicked
 
@@ -302,13 +297,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTree jt_periodos;
     private javax.swing.JMenuItem mi_listar;
     private javax.swing.JMenuItem mi_mostrarTabla;
+    private javax.swing.JProgressBar pb_carga;
     private javax.swing.JPopupMenu pm_arbol;
     private javax.swing.JTable tb_mostrar;
     private javax.swing.JTextField txt_Torneo;
