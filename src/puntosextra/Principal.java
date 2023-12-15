@@ -15,6 +15,7 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     private DefaultTreeModel arbol;
+    private Barra b;
     public Principal() {
         initComponents();
         
@@ -241,7 +242,10 @@ public class Principal extends javax.swing.JFrame {
         raiz.add(punto1);
         raiz.add(punto2);
         
-
+        Archivos.Guardar(jt_periodos, this);
+        
+        b = new Barra();
+        b.start();
     }//GEN-LAST:event_b_guardarEquiposMouseClicked
 
     /**
