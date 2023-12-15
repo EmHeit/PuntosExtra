@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package puntosextra;
+
+import javax.swing.DefaultListModel;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -13,8 +14,24 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
+    private DefaultTreeModel arbol;
     public Principal() {
         initComponents();
+        
+        DefaultMutableTreeNode nodo = new DefaultMutableTreeNode("Periodos Academicos");
+        arbol = new DefaultTreeModel(nodo);
+        jt_periodos = new JTree(arbol);
+        
+        DefaultMutableTreeNode Q1 = new DefaultMutableTreeNode("Q1");
+        DefaultMutableTreeNode Q2 = new DefaultMutableTreeNode("Q2");
+        DefaultMutableTreeNode Q4 = new DefaultMutableTreeNode("Q4");
+        DefaultMutableTreeNode Q5 = new DefaultMutableTreeNode("Q5");
+        
+        nodo.add(Q1);
+        nodo.add(Q2);
+        nodo.add(Q4);
+        nodo.add(Q5);
+        
     }
 
     /**
@@ -26,21 +43,211 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        pm_arbol = new javax.swing.JPopupMenu();
+        mi_listar = new javax.swing.JMenuItem();
+        mi_mostrarTabla = new javax.swing.JMenuItem();
+        d_mostrar = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tb_mostrar = new javax.swing.JTable();
+        d_listar = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jL_listar = new javax.swing.JList<>();
+        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_periodos = new javax.swing.JTree();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel2 = new javax.swing.JLabel();
+        txt_equipo2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txt_equipo = new javax.swing.JTextField();
+        b_guardarEquipos = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txt_deporte = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        ftxf_puntos1 = new javax.swing.JFormattedTextField();
+        ftxf_puntos2 = new javax.swing.JFormattedTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txt_Torneo = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txt_periodo = new javax.swing.JTextField();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        mi_listar.setText("Listar Equipos");
+        mi_listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_listarActionPerformed(evt);
+            }
+        });
+        pm_arbol.add(mi_listar);
+
+        mi_mostrarTabla.setText("Mostrar Tabla");
+        mi_mostrarTabla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_mostrarTablaActionPerformed(evt);
+            }
+        });
+        pm_arbol.add(mi_mostrarTabla);
+
+        d_mostrar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tb_mostrar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(tb_mostrar);
+
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 350));
+
+        d_mostrar.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 420));
+
+        d_listar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jL_listar.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(jL_listar);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 335, 240));
+
+        jButton1.setText("Mostrar Tabla");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, -1, -1));
+
+        d_listar.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 390));
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMinimumSize(new java.awt.Dimension(700, 400));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jt_periodos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_periodosMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jt_periodos);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 420, 300));
+        jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 680, 20));
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Puntos");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        jPanel1.add(txt_equipo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 170, -1));
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Equipo 2");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        jPanel1.add(txt_equipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 170, -1));
+
+        b_guardarEquipos.setText("Guardar Equipos");
+        b_guardarEquipos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_guardarEquiposMouseClicked(evt);
+            }
+        });
+        jPanel1.add(b_guardarEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Deporte");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, -1));
+        jPanel1.add(txt_deporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 170, -1));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Equipo 1");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("Puntos");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel1.add(ftxf_puntos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+        jPanel1.add(ftxf_puntos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Torneo");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        jPanel1.add(txt_Torneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 170, -1));
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Periodo");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        jPanel1.add(txt_periodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 170, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jt_periodosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_periodosMouseClicked
+        if (evt.isMetaDown()) {            
+            pm_arbol.show(jt_periodos, evt.getX(), evt.getY());
+        }        
+    }//GEN-LAST:event_jt_periodosMouseClicked
+
+    private void mi_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_listarActionPerformed
+        d_listar.pack();
+        d_listar.setLocationRelativeTo(this);
+        d_listar.setVisible(true);
+        
+        
+    }//GEN-LAST:event_mi_listarActionPerformed
+
+    private void mi_mostrarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_mostrarTablaActionPerformed
+        d_mostrar.pack();
+        d_mostrar.setLocationRelativeTo(this);
+        d_mostrar.setVisible(true);
+    }//GEN-LAST:event_mi_mostrarTablaActionPerformed
+
+    private void b_guardarEquiposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_guardarEquiposMouseClicked
+        String torneo = txt_Torneo.getText();
+        String periodo = txt_periodo.getText();
+        String deporte = txt_deporte.getText();
+        String equipo1 = txt_equipo.getText();
+        String equipo2 = txt_equipo2.getText();
+        String puntos = ftxf_puntos1.getText();
+        String puntos1 = ftxf_puntos2.getText();
+        
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) arbol.getRoot();
+        DefaultMutableTreeNode r =  new DefaultMutableTreeNode(torneo);
+        DefaultMutableTreeNode r1 =  new DefaultMutableTreeNode(periodo);
+        DefaultMutableTreeNode r2 =  new DefaultMutableTreeNode(deporte);
+        DefaultMutableTreeNode r3 =  new DefaultMutableTreeNode(equipo1);
+        DefaultMutableTreeNode r4 =  new DefaultMutableTreeNode(equipo2);
+        DefaultMutableTreeNode r5 =  new DefaultMutableTreeNode(puntos);
+        DefaultMutableTreeNode r6 =  new DefaultMutableTreeNode(puntos1);
+        
+        raiz.add(r);
+        raiz.add(r1);
+        raiz.add(r2);
+        raiz.add(r3);
+        raiz.add(r4);
+        raiz.add(r5);
+        raiz.add(r6);
+        
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r)});
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r1)});
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r2)});
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r3)});
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r4)});
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r5)});
+        arbol.nodesWereInserted(raiz, new int[]{raiz.getIndex(r6)});
+
+    }//GEN-LAST:event_b_guardarEquiposMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +285,36 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton b_guardarEquipos;
+    private javax.swing.JDialog d_listar;
+    private javax.swing.JDialog d_mostrar;
+    private javax.swing.JFormattedTextField ftxf_puntos1;
+    private javax.swing.JFormattedTextField ftxf_puntos2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JList<String> jL_listar;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTree jt_periodos;
+    private javax.swing.JMenuItem mi_listar;
+    private javax.swing.JMenuItem mi_mostrarTabla;
+    private javax.swing.JPopupMenu pm_arbol;
+    private javax.swing.JTable tb_mostrar;
+    private javax.swing.JTextField txt_Torneo;
+    private javax.swing.JTextField txt_deporte;
+    private javax.swing.JTextField txt_equipo;
+    private javax.swing.JTextField txt_equipo2;
+    private javax.swing.JTextField txt_periodo;
     // End of variables declaration//GEN-END:variables
 }
